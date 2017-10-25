@@ -1,0 +1,27 @@
+{
+    "service":{
+        "restart": true,
+        "name": "dualshield",
+        "condition":200,
+        "timeout":120
+    },
+    "smtp": {
+        "enabled": true,
+        "server":"mail.yourcompany.com",
+        "port":587,
+        "ssl":true,
+        "auth":true,
+        "username":"support@yourcompany.com",
+        "password":"changeit",
+        "to":["admin@yourcompany.com"],
+        "customize":{
+            "subject":"Alert: There are a lot of CLOSE_WAIT connections",        
+            "body":"Please check the log at {0} for details, and notify the vendor"
+        }
+        
+    },
+    "period": 600,
+    "port":8074,
+    "threshold":20,
+    "state": 8    
+}
